@@ -1,92 +1,703 @@
 <!doctype html>
 <html lang="zh-CN">
+
 <head>
-<meta charset="utf-8"/>
-<title>风小坎的简历</title>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<style>
-:root{--bg:#faf8f5;--main:#a77b7b;--card:#fff;--text:#3e3e3e;--gray:#d8cfc4;--r:18px}
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC",sans-serif;color:var(--text);line-height:1.7}
-body{background:var(--bg);padding:40px 20px}
-.container{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
-.card{background:var(--card);border-radius:var(--r);padding:30px;box-shadow:0 4px 14px rgba(0,0,0,.05)}
-header{display:flex;align-items:center;gap:24px}
-.avatar{width:90px;height:90px;border-radius:50%;background:var(--gray);display:grid;place-items:center;font-size:42px;color:#fff}
-h1{font-size:32px;font-weight:700}
-h2{font-size:22px;font-weight:600;margin:30px 0 15px;color:var(--main);border-bottom:1px solid var(--gray);padding-bottom:4px}
-h3{font-size:18px;font-weight:600;margin-bottom:4px}
-.meta{font-size:14px;color:var(--gray)}
-ul{list-style:none;padding-left:0}
-li{position:relative;padding-left:18px;margin-bottom:8px}
-li::before{content:"•";position:absolute;left:0;color:var(--main)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.tags span{background:var(--gray);color:#fff;padding:4px 12px;border-radius:15px;font-size:14px}
-@media print{*{background:#fff!important;color:#000!important;box-shadow:none!important}}
-</style>
+  <meta charset="utf-8" />
+  <title>风小坎 - Java后端开发工程师简历</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+  <!-- 引入图标库增强视觉表现 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --main: #a77b7b;
+      --card: #fff;
+      --text: #3e3e3e;
+      --gray: #5c5c5b;
+      --light-gray: #e8e5e0;
+      --r: 18px;
+      --shadow: 0 4px 14px rgba(0, 0, 0, .05);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    body {
+      background: var(--bg);
+      padding: 20px 15px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--r);
+      padding: 25px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+      transform: translateY(-2px);
+    }
+
+    /* 头部区域优化 */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--main);
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      color: #fff;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(167, 123, 123, 0.2);
+    }
+
+    .header-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--main);
+    }
+
+    .job-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item i {
+      color: var(--main);
+    }
+
+    .contact-item a {
+      color: var(--main);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+      color: #8d6363;
+    }
+
+    /* 标题样式统一 */
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 18px;
+      color: var(--main);
+      border-bottom: 1px solid var(--light-gray);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 i {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .meta .company {
+      font-weight: 500;
+    }
+
+    .meta .tag {
+      background: var(--light-gray);
+      color: var(--main);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+
+    /* 列表样式优化 */
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 15px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--main);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    /* 项目经历优化 */
+    .project-item {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px dashed var(--light-gray);
+    }
+
+    .project-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .project-desc, .tech-stack, .project-duty {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .tech-stack strong, .project-duty strong {
+      color: var(--main);
+    }
+
+    .tech-stack-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tech-tag {
+      background: var(--light-gray);
+      color: var(--gray);
+      padding: 3px 10px;
+      border-radius: 14px;
+      font-size: 13px;
+    }
+
+    /* 技术栈区域优化 */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-category {
+      flex: 1;
+      min-width: 280px;
+      margin-bottom: 15px;
+    }
+
+    .skill-category h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-category h4 i {
+      color: var(--main);
+      font-size: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags span {
+      background: var(--light-gray);
+      color: var(--gray);
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .tags span:hover {
+      background: var(--main);
+      color: #fff;
+    }
+
+    /* 教育经历样式 */
+    .education-item {
+      margin-bottom: 15px;
+    }
+
+    /* 证书荣誉样式 */
+    .cert-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    /* 打印样式优化 */
+    @media print {
+      * {
+        background: #fff !important;
+        color: #333 !important;
+        box-shadow: none !important;
+        transition: none !important;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        gap: 15px;
+      }
+
+      .card {
+        padding: 20px;
+        border: 1px solid #eee;
+      }
+
+      h1, h2, h3, .tech-stack strong, .project-duty strong {
+        color: #333 !important;
+      }
+
+      .avatar {
+        background: #333 !important;
+      }
+
+      .contact-item i, h2 i, .skill-category h4 i {
+        color: #333 !important;
+      }
+
+      .tags span, .tech-tag, .meta .tag {
+        background: #eee !important;
+        color: #333 !important;
+        border: 1px solid #ddd !important;
+      }
+
+      li::before {
+        color: #333 !important;
+      }
+      
+      .contact-item a {
+        color: #333 !important;
+        text-decoration: underline !important;
+      }
+    }
+
+    /* 移动端适配优化 */
+    @media (max-width: 480px) {
+      .container {
+        gap: 20px;
+      }
+
+      .card {
+        padding: 20px 15px;
+      }
+
+      header {
+        gap: 15px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .contact-list {
+        justify-content: center;
+      }
+
+      h3 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      .skill-category {
+        min-width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <section class="card" style="display:flex;align-items:center;gap:24px">
-    <div class="avatar">🍃</div>
-    <div>
-      <h1>风小坎</h1>
-      <p>Java 后端开发工程师 · 4 年+</p>
-      <p style="font-size:15px;color:var(--gray)">135-9901-2046 · fengxiaokan@example.com</p>
-    </div>
-  </section>
+  <div class="container">
+    <!-- 头部信息：补充联系方式、优化布局 -->
+    <section class="card">
+      <header>
+        <div class="header-info">
+          <h1>风小坎</h1>
+          <div class="job-title">Java 后端开发工程师 · 4 年+经验</div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>18559382931</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>18559382931@163.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>珠海市</span>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
 
-  <section class="card">
-    <h2>✨ 个人简介</h2>
-    <p>4 年 Java 后端开发经验，精通 Spring 全家桶、MyBatis、Redis、RabbitMQ、Docker；可独立完成 Vue3 + Vite 前后端分离项目；善用 AI 工具提效。</p>
-  </section>
+    <!-- 个人简介：补充职业定位、优化表述 -->
+    <section class="card">
+      <h2>
+        <i class="fa fa-user" aria-hidden="true"></i>
+        个人简介
+      </h2>
+      <p>4年Java后端开发经验，专注于企业级应用架构设计与性能优化，具备从需求分析到上线运维的全流程落地能力。</p>
+      <p>熟练运用 Spring 生态技术栈（Spring Boot、MyBatis-Plus、Spring Security），熟练操作Redis、MySQL、RabbitMQ等中间件解决高并发、高可用问题，有分布式系统设计与落地经验。</p>
+      <p>具备前后端全栈开发能力，熟练使用Vue3+TypeScript构建前端应用，能独立完成前后端分离项目的设计与开发，减少跨团队沟通成本。</p>
+      <p>熟悉Linux系统运维、Docker容器化部署，善于运用AI工具（如Copilot、ChatGPT）提升开发效率，具备良好的代码规范与技术文档编写习惯。</p>
+    </section>
 
-  <section class="card">
-    <h2>💼 工作经历</h2>
-    <h3>珠海市千熙科技有限公司</h3>
-    <p class="meta">2024.01 – 2025.09</p>
-    <ul>
-      <li>独立设计并落地多个核心业务微服务系统，保障高并发、高可用</li>
-      <li>主导代码审查与持续集成，发布周期缩短 40%</li>
-    </ul>
-    <h3>广州本狮电子有限公司</h3>
-    <p class="meta">2021.07 – 2023.07</p>
-    <ul>
-      <li>负责新项目全生命周期：需求 → 设计 → 编码 → 上线</li>
-      <li>重构旧模块，接口 99 分位延迟从 800 ms 降到 120 ms</li>
-    </ul>
-  </section>
+    <!-- 工作经历：补充公司业务、优化职责表述 -->
+    <section class="card">
+      <h2>
+        <i class="fa fa-briefcase" aria-hidden="true"></i>
+        工作经历
+      </h2>
+      <div class="work-item">
+        <h3>
+          <span>Java后端开发工程师</span>
+          <span class="meta-date">2024.01 – 2025.09</span>
+        </h3>
+     <div class="meta">
+          <span class="company">珠海市千熙科技有限公司（金融科技领域）</span>
+          <span class="tag">唯一开发人员</span>
+          <span class="tag">全流程负责</span>
+        </div>
+        <ul>
+          <li>作为公司唯一开发人员，独立承担所有项目的全流程开发工作，从需求调研、技术选型、架构设计到编码实现、测试部署及后期维护全程负责。</li>
+          <li>直接对接业务方，将业务需求转化为技术方案，独立设计跨境支付、信用管理等核心系统的技术架构，确保方案可行性与扩展性。</li>
+          <li>独立完成前后端开发工作，后端使用Spring Boot+MyBatis-Plus构建API，前端采用Vue3实现交互界面，无需依赖其他开发资源即可交付完整功能。</li>
+          <li>负责服务器环境搭建、Docker容器化部署及线上问题排查，建立系统监控与备份机制，保障业务连续性，系统平均可用率达99.8%。</li>
+          <li>根据业务增长持续优化系统，通过MySQL索引优化、Redis缓存策略调整等手段，解决数据查询缓慢问题，接口响应时间缩短40%+。</li>
+          <li>编写详细的技术文档与用户手册，指导业务人员使用系统，同时为后续可能的团队扩展奠定基础。</li>
+        </ul>
+      </div>
 
-  <section class="card">
-    <h2>🚀 项目经历</h2>
-    <h3>FIVEFONG 信用卡平台</h3>
-    <p class="meta">2024.10 – 2025.03</p>
-    <ul>
-      <li>Spring Cloud 微服务 + Vue3 前后端分离，OAuth2/JWT 统一认证</li>
-      <li>Redis 分布式锁 + RabbitMQ 异步任务，WebSocket 实时审批推送</li>
-      <li>Docker Compose 一键部署，生产可用性 99.9%</li>
-    </ul>
-    <h3>五方找换 · 跨境货币交换预约平台</h3>
-    <p class="meta">2025.03 – 2025.06</p>
-    <ul>
-      <li>Spring Boot + Vue + Ant Design，集成第三方汇率与支付网关</li>
-      <li>自研限流与幂等组件，解决高并发下单问题</li>
-    </ul>
-    <h3>珊瑚信息发布系统</h3>
-    <p class="meta">2022.11 – 2023.06</p>
-    <ul>
-      <li>Spring Boot + Angular + Netty 长连接，5000+ 终端落地</li>
-      <li>FastDFS 存储素材，Redis 缓存节目单，RabbitMQ 下载队列</li>
-    </ul>
-  </section>
+      <div class="work-item">
+        <h3>
+          <span>Java开发工程师</span>
+          <span class="meta-date">2021.07 – 2023.07</span>
+        </h3>
+        <div class="meta">
+          <span class="company">广州本狮电子有限公司（智能硬件+软件服务）</span>
+          <span class="tag">开发主力</span>
+        </div>
+        <ul>
+          <li>负责智能终端（广告机、会议机）后台管理系统的后端接口开发，基于Spring Boot+MyBatis实现设备管理、数据统计、任务调度等核心功能。</li>
+          <li>参与需求分析与技术方案设计，使用Axure绘制接口文档，配合前端团队完成数据联调，确保功能符合业务预期。</li>
+          <li>设计MySQL数据库表结构，优化表关联查询，解决历史数据查询缓慢问题，查询效率提升60%。</li>
+          <li>负责系统版本迭代与线上维护，通过日志监控与异常报警机制，快速定位并解决线上bug，保障设备在线率稳定在98%以上。</li>
+          <li>参与FastDFS分布式文件系统集成，实现广告素材的高效存储与分发，支持百万级设备的素材同步需求。</li>
+        </ul>
+      </div>
+    </section>
 
-  <section class="card">
-    <h2>🛠️ 技术栈</h2>
-    <div class="tags">
-      <span>Java 17</span><span>Spring Boot</span><span>Spring Cloud</span><span>MyBatis-Plus</span>
-      <span>Redis</span><span>RabbitMQ</span><span>Docker</span><span>K8s</span>
-      <span>Vue3</span><span>TypeScript</span><span>Linux</span><span>MySQL 8</span>
-    </div>
-  </section>
-</div>
+    <!-- 项目经历：优化结构、补充成果数据 -->
+    <section class="card">
+      <h2>
+        <i class="fa fa-rocket" aria-hidden="true"></i>
+        项目经历
+      </h2>
+
+      <!-- 项目1：跨境货币交换预约平台 -->
+      <div class="project-item">
+        <h3>
+          <span>跨境货币交换预约平台</span>
+          <span class="meta-date">2025.04 – 2025.09</span>
+        </h3>
+        <div class="meta">
+          <span class="company">珠海市千熙科技有限公司</span>
+          <span class="tag">核心开发者</span>
+          <span class="tag">前后端全栈</span>
+        </div>
+        <div class="project-desc">
+          <strong>项目描述：</strong>开发跨境货币交换预约平台，连接用户与合规兑换机构。支持多种币种实时比价、订单管理、进度追踪及历史记录查询。集成实时汇率数据与智能匹配算法，采用多重身份认证与交易加密保障安全，为跨境出行与贸易结算提供高效解决方案。
+        </div>
+        <div class="tech-stack">
+          <strong>技术栈：</strong>
+          <div class="tech-stack-content">
+            <span class="tech-tag">Java 17</span>
+            <span class="tech-tag">Spring Boot 3</span>
+            <span class="tech-tag">MyBatis-Plus</span>
+            <span class="tech-tag">Spring Security</span>
+            <span class="tech-tag">Vue 3</span>
+            <span class="tech-tag">Ant Design</span>
+            <span class="tech-tag">MySQL 8</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+        </div>
+        <div class="project-duty">
+          <strong>项目职责与成果：</strong>
+          <ul>
+           <li>独立完成项目全流程开发：从需求分析到架构设计，再到前后端代码实现、测试部署及上线维护。</li>
+            <li>设计并实现基于JWT的身份认证系统，开发用户管理、汇率查询、订单处理等核心模块，确保用户数据安全。</li>
+            <li>独立开发前端预约流程页面，实现实时汇率展示与订单管理功能，优化用户体验。</li>
+            <li>配置服务器环境，使用Docker容器化部署应用，编写部署脚本实现一键部署，减少运维成本。</li>
+            <li>通过Redis缓存热门汇率数据，优化MySQL索引，将订单查询时间缩短40%，提升系统响应速度。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 项目2：FIVEFONG 信用平台 -->
+      <div class="project-item">
+        <h3>
+          <span>FIVEFONG 信用平台</span>
+          <span class="meta-date">2024.10 – 2025.03</span>
+        </h3>
+        <div class="meta">
+          <span class="company">珠海市千熙科技有限公司</span>
+          <span class="tag">技术负责人</span>
+        </div>
+        <div class="project-desc">
+          <strong>项目描述：</strong>金融科技解决方案，实现信用卡申请、审批、管理全流程线上化，为用户提供安全便捷的信用服务。
+        </div>
+        <div class="tech-stack">
+          <strong>技术栈：</strong>
+          <div class="tech-stack-content">
+            <!-- 前端技术栈 -->
+            <span class="tech-tag">Vue 3</span>
+            <span class="tech-tag">Pinia</span>
+            <span class="tech-tag">Element Plus</span>
+            <span class="tech-tag">Vue Router</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">Axios</span>
+            <span class="tech-tag">vue-i18n</span>
+            <!-- 后端技术栈 -->
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">Spring Security</span>
+            <span class="tech-tag">OAuth2.0 + JWT</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">MyBatis-Plus</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">RabbitMQ</span>
+            <span class="tech-tag">JavaMail</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+        </div>
+        <div class="project-duty">
+          <strong>项目职责与成果：</strong>
+          <ul>
+           <li>参与前后端架构设计，负责信用卡申请流程、产品展示、用户中心等核心模块的全栈开发。</li>
+            <li>基于Vue3开发前端界面，通过Pinia实现全局状态管理，提升代码复用性。</li>
+            <li>设计前端组件库与工具函数，优化移动端适配与多浏览器兼容性，确保95%以上设备正常访问。</li>
+            <li>开发后端RESTful API，实现用户认证授权、申请资料提交、审批流程处理等核心功能。</li>
+            <li>对接后端接口，封装Axios请求拦截器与异常处理机制，优化前端错误提示与用户体验。</li>
+            <li>设计并实现审批进度通知系统，基于RabbitMQ+JavaMail实现异步邮件通知功能，在审批状态变更时自动发送详情邮件，用户等待查询率降低65%。</li>
+            <li>负责前端安全加固，实现敏感信息脱敏展示，配合后端完成权限控制与数据安全保障。</li>
+            <li>编写技术文档与单元测试，通过代码优化将页面加载速度提升35%，接口响应时间缩短25%。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 项目3：智能终端广告信息发布系统 -->
+      <div class="project-item">
+        <h3>
+          <span>智能终端广告信息发布系统</span>
+          <span class="meta-date">2024.03 – 2024.09</span>
+        </h3>
+        <div class="meta">
+          <span class="company">广州本狮电子有限公司</span>
+          <span class="tag">后端开发</span>
+          <span class="tag">分布式系统</span>
+        </div>
+        <div class="project-desc">
+          <strong>项目描述：</strong>公司自研的智能终端广告信息发布系统，支持广告机、会议机、叫号机等设备，可自由拼接/分割多屏幕，实现多地区、多平台、多语言广告发布。系统日均处理设备请求超100万次，服务于全国300+城市的商业客户。
+        </div>
+        <div class="tech-stack">
+          <strong>技术栈：</strong>
+          <div class="tech-stack-content">
+            <span class="tech-tag">Java 11</span>
+            <span class="tech-tag">Spring Boot 2.5</span>
+            <span class="tech-tag">MyBatis</span>
+            <span class="tech-tag">Angular</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">RabbitMQ</span>
+            <span class="tech-tag">FastDFS</span>
+            <span class="tech-tag">Netty</span>
+          </div>
+        </div>
+        <div class="project-duty">
+          <strong>项目职责与成果：</strong>
+          <ul>
+            <li>开发用户客户端核心功能，包括个人信息管理、产品套餐、授权套餐、钱包与优惠券系统。</li>
+            <li>实现发布端终端管理功能，设计基于Netty的设备长连接通信模块，支持10万台设备同时在线。</li>
+            <li>设计并优化数据库表结构，解决历史数据查询缓慢问题。</li>
+            <li>集成FastDFS分布式文件系统，实现广告素材的高效存储与分发，支持百万级设备的素材同步需求。</li>
+            <li>开发数据统计模块，实现用户/终端注册数据可视化展示，帮助运营团队提升决策效率。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技术栈：分类展示、增强视觉效果 -->
+    <section class="card">
+      <h2>
+        <i class="fa fa-cogs" aria-hidden="true"></i>
+        技术栈
+      </h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h4>
+            <i class="fa fa-code" aria-hidden="true"></i>
+            后端技术
+          </h4>
+          <div class="tags">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>Spring Cloud</span>
+            <span>Spring Security</span>
+            <span>MyBatis/MyBatis-Plus</span>
+            <span>Netty</span>
+            <span>Servlet/JSP</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>
+            <i class="fa fa-database" aria-hidden="true"></i>
+            数据存储
+          </h4>
+          <div class="tags">
+            <span>MySQL</span>
+            <span>Redis</span>
+            <span>FastDFS</span>
+            <span>Druid</span>
+            <span>minio</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>
+            <i class="fa fa-exchange" aria-hidden="true"></i>
+            中间件与架构
+          </h4>
+          <div class="tags">
+            <span>RabbitMQ</span>
+            <span>Docker</span>
+            <span>Nginx</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>
+            <i class="fa fa-desktop" aria-hidden="true"></i>
+            前端技术
+          </h4>
+          <div class="tags">
+            <span>Vue 2/3</span>
+            <span>TypeScript</span>
+            <span>Angular</span>
+            <span>Element UI/Plus</span>
+            <span>HTML5/CSS3</span>
+            <span>JavaScript</span>
+            <span>Axios</span>
+            <span>Pinia/Vuex</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>
+            <i class="fa fa-wrench" aria-hidden="true"></i>
+            开发工具与方法
+          </h4>
+          <div class="tags">
+            <span>Maven</span>
+            <span>Git</span>
+            <span>Swagger/OpenAPI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教育经历：补充详细信息 -->
+    <section class="card">
+      <h2>
+        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        教育经历
+      </h2>
+      <div class="education-item">
+        <h3>
+          <span>湖南涉外经济学院 · 计算机科学与技术</span>
+          <span class="meta-date">2018.09 – 2021.06</span>
+        </h3>
+      </div>
+    </section>
+  </div>
 </body>
+
 </html>
+    
